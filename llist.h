@@ -3,12 +3,12 @@
 
 #include <cstddef>
 #include <cstdint>
-#include <forward_list>
-#include <vector>
+#include <memory>
 
 //template <typename T>
 class LList {
     using T = int;
+    using Alloc = std::allocator<T>;
     class Node {
         alignas(alignof(T)) uint8_t m_data[sizeof(T)];
     public:
